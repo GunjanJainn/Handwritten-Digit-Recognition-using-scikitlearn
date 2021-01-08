@@ -6,10 +6,12 @@ import pandas as pd
 from matplotlib import pyplot
 from sklearn import tree
 
-
+#creating the classifier
 clf= tree.DecisionTreeClassifier()
 dataset= pd.read_csv("train.csv")
-data= dataset.values
+data= dataset.values  #can be used as a matrix now
+#(42000, 784) size
+
 
 #training dataset
 xtrain= data[0:21000, 1 :]
@@ -24,8 +26,8 @@ actaul_label= data[21000: , 0]
 clf.fit(xtrain, xtest)
 
 #taking a sample
-x= xtest[6789]
+x= xtest[67]
 x.shape= (28,28)
 pyplot.imshow(x, cmap="gray")
-print(clf.predict(xtest[6789]))
+print(clf.predict([xtest[67]] ))
 pyplot.show()
