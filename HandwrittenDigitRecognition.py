@@ -23,7 +23,7 @@ actaul_label= data[21000: , 0]
 
 #to erase check_is_fitted error
 #tree.check_is_fitted(clf, 'tree_')
-clf.fit(xtrain, xtest)
+clf.fit(xtrain, train_label)
 
 #taking a sample
 x= xtest[67]
